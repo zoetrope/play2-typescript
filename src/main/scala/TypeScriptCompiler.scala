@@ -23,7 +23,7 @@ object TypeScriptCompiler {
       else
         Seq("tsc")
       val tempOut = createTempDir()
-      val outOption = Seq("--out", tempOut.getPath)
+      val outOption = Seq("--outDir", tempOut.getPath)
       val tscOutput = runCompiler(
         cmd ++ options.filter( _ != "rjs" ) ++ writeDeclarationsOptions ++ outOption ++ Seq(tsFile.getAbsolutePath)
       )
